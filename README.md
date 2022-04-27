@@ -37,6 +37,8 @@ To install the application please follow the proceeding directions:
 
 ## Demo
 
+https://user-images.githubusercontent.com/54952993/165537752-6ab7948d-aef6-406a-9244-5b7a9c281930.mp4
+
 
 ## Contributing
 
@@ -49,9 +51,13 @@ All contributions are subject to review.
 ## References
 
   Coding Bootcamp - Module 18: Pizza Hunt
+  
   Coding Bootcamp - Module 21: Deep Thoughts
+  
   [zkrutikov](https://github.com/zkrutikov/social-network-api)
+  
   [nicolewallace09](https://github.com/nicolewallace09/social-network-api)
+  
   [jakekelly44](https://github.com/jakekelly44/social-network)
 
 ## Questions
