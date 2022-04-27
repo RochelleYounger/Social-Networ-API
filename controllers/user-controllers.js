@@ -2,14 +2,14 @@
 const { User } = require('../models');
 
 const userController = {
-  createUser({ body }, res) {
+  userNew({ body }, res) {
     User.create(body)
       .then(dataUserRes => res.json(dataUserRes))
       .catch(err => res.status(400).json(err));
   },
 
 
-  getAllUsers(req, res) {
+  userFindAll(req, res) {
     User.find({})
       .populate({path: 'thoughts', select: '-__v'})
       .populate({path: 'friends', select: '-__v'})
@@ -22,7 +22,7 @@ const userController = {
   },
 
 
-  getUserById({ params }, res) {
+  userFindByID({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({path: 'thoughts', select: '-__v'})
       .populate({path: 'friends', select: '-__v'})
@@ -41,7 +41,7 @@ const userController = {
   },
 
 
-  updateUser({ params, body }, res) {
+  userUpdate({ params, body }, res) {
     User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
       .then(dataUserRes => {
         if (!dataUserRes) {
@@ -54,7 +54,7 @@ const userController = {
   },
 
 
-  deleteUser({ params }, res) {
+  userRemove({ params }, res) {
     User.findOneAndDelete({ _id: params.id })
       .then(dataUserRes => {
         if (!dataUserRes) {
@@ -67,7 +67,7 @@ const userController = {
   },
 
 
-  addFriend({ params }, res) {
+  friendNew({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.id },
       { $push: { friends: params.friendId } },
@@ -87,7 +87,7 @@ const userController = {
   },
 
 
-  deleteFriend({ params }, res) {
+  friendRemove({ params }, res) {
     User.findOneAndUpdate(
       { _id: params.id },
       { $pull: { friends: params.friendId } },
