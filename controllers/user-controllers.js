@@ -2,6 +2,13 @@
 const { User } = require('../models');
 
 const userController = {
+  createUser({ body }, res) {
+    User.create(body)
+      .then(dataUserRes => res.json(dataUserRes))
+      .catch(err => res.status(400).json(err));
+  },
+
+
   getAllUsers(req, res) {
     User.find({})
       .populate({path: 'thoughts', select: '-__v'})
@@ -34,13 +41,6 @@ const userController = {
   },
 
 
-  createUser({ body }, res) {
-    User.create(body)
-      .then(dataUserRes => res.json(dataUserRes))
-      .catch(err => res.status(400).json(err));
-  },
-
-
   updateUser({ params, body }, res) {
     User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
       .then(dataUserRes => {
@@ -51,6 +51,19 @@ const userController = {
         res.json(dataUserRes);
       })
       .catch(err => res.status(400).json(err))
+  },
+
+
+  deleteUser({ params }, res) {
+    User.findOneAndDelete({ _id: params.id })
+      .then(dataUserRes => {
+        if (!dataUserRes) {
+          res.status(404).json({ message: 'User not found. Invalid user id.' });
+          return;
+        }
+        res.json(dataUserRes);
+      })
+      .catch(err => res.status(400).json(err));
   },
 
 
@@ -71,19 +84,6 @@ const userController = {
       })
       .catch(err => res.json(err));
 
-  },
-
-
-  deleteUser({ params }, res) {
-    User.findOneAndDelete({ _id: params.id })
-      .then(dataUserRes => {
-        if (!dataUserRes) {
-          res.status(404).json({ message: 'User not found. Invalid user id.' });
-          return;
-        }
-        res.json(dataUserRes);
-      })
-      .catch(err => res.status(400).json(err));
   },
 
 
