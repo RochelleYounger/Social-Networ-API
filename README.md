@@ -1,7 +1,7 @@
 
   [![license: ISC](https://img.shields.io/badge/License-ISC-lightblue)](https://opensource.org/licenses/ISC)
   
-# Social-Networ-API
+# Social-Network-API
 
 ## Description
 
@@ -46,9 +46,13 @@ All contributions are subject to review.
   
   This application is licensed under [ISC](https://opensource.org/licenses/ISC).
 
-## Credits
+## References
 
-  Code adapted from [nicolewallace09](https://github.com/nicolewallace09/e-commerce-backend)
+  Coding Bootcamp - Module 18: Pizza Hunt
+  Coding Bootcamp - Module 21: Deep Thoughts
+  [zkrutikov](https://github.com/zkrutikov/social-network-api)
+  [nicolewallace09](https://github.com/nicolewallace09/social-network-api)
+  [jakekelly44](https://github.com/jakekelly44/social-network)
 
 ## Questions
 
