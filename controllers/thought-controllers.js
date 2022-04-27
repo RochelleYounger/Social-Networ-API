@@ -12,7 +12,7 @@ const thoughtControllers = {
       })
       .then(dataThoughtRes => {
         if (!dataThoughtRes) {
-          res.status(404).json({ message: 'Thought not found. Invalid thought id' });
+          res.status(404).json({ message: 'Thought incorrectly formatte' });
           return;
         }
         res.json(dataThoughtRes)
