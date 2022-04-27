@@ -10,6 +10,7 @@ const reactionSchema = new Schema(
     reactionBody: {
       type: String,
       required: 'Field cannot be left empty',
+      trim: true,
       maxlength: 280
     },
     username: {
@@ -20,7 +21,7 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (createdAtVal) => formatDate(createdAtVal)
+      get: (timeStamp) => formatDate(timeStamp)
     },
   },
   {

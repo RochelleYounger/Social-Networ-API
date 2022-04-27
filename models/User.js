@@ -12,7 +12,10 @@ const UserSchema = new Schema(
       type: String,
       unique: true,
       required: 'Field cannot be left empty',
-      match: [/.+\@.+\..+/, 'Email must be properly formatted.']
+      match: [
+        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+        'Email must be properly formatted.'
+      ]
     },
     thoughts: [
       {
@@ -35,7 +38,7 @@ const UserSchema = new Schema(
   }
 );
 
-UserSchema.virtual('friendCount').get(function() {
+UserSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });
 

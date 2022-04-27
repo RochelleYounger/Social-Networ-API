@@ -1,3 +1,3 @@
-module.exports = function(createdAtVal) {
-  return new Date(createdAtVal).toLocaleString();
+module.exports = function(timeStamp) {
+  return new Date(timeStamp).toLocaleString();
 }
