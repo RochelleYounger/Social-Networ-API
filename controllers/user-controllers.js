@@ -1,7 +1,7 @@
 
 const { User } = require('../models');
 
-const userController = {
+const userControllers = {
   userNew({ body }, res) {
     User.create(body)
       .then(dataUserRes => res.json(dataUserRes))
@@ -106,4 +106,4 @@ const userController = {
   }
 };
 
-module.exports = userController; 
+module.exports = userControllers; 
