@@ -13,7 +13,7 @@ This application provides the back-end of social media platform. The application
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [License](#license)
-  * [Credits](#credits)
+  * [REferences](#References)
   * [Questions](#questions)
 
 ## Installation
